@@ -3,62 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cris Garduño</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navigation.css">
+    <title>Cris Garduno</title>
+    <meta name="description" content="Personal website and portfolio">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">Cris Garduño</div>
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="projects.html">Side Quests</a>
-            <a href="research.html">Research</a>
+    <!-- Top Navigation -->
+    <nav class="top-nav" id="topNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Cris Garduño</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Stuff & Things</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+            </ul>
         </div>
-        <button class="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <main class="container">
-        <section class="hero">
-            <h1>Hello, I'm Cris Garduño</h1>
-            <p>Engineer of Ideas & Champion of Curiosity</p>
-        </section>
-
-        <section class="about">
-            <h2>About Me</h2>
-            <p>My work bridges science, creativity, and technology to explore and enhance the human experience, 
-               currently as a perception researcher at Brooks Running, where I connect biomechanics, perception, 
-               and data insights to improve the runner's experience.</p>
-        </section>
-
-        <section class="highlights">
-            <div class="highlight-card">
-                <h3>Research</h3>
-                <p>A modern polymath exploring threads across disciplines, driven by a passion for discovery</p>
-                <a href="research.html" class="button">Learn More</a>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Hello, I'm Cris Garduño</h1>
+                <div class="hero-photo-container">
+                    <img src="assets/profile-photo.jpeg" alt="Cris Garduño" class="hero-photo">
+                </div>
+                <p class="hero-subtitle">builder of stuff, breaker of things</p>
             </div>
-            <div class="highlight-card">
-                <h3>Side Quests</h3>
-                <p>An evolving collection of personal projects and things that keep me up at night</p>
-                <a href="projects.html" class="button">View Projects</a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="content-container">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I mix science, creativity, and technology to explore how people move and experience the world. At Brooks Running, I connect perception, biomechanics, and data science to elevate running experiences...and on the side, I tinker, test, and build whatever catches my curiosity.
+                </p>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="cards-section">
+            <div class="content-container">
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 class="card-title">Research</h3>
+                        <p class="card-description">
+                            Fueled by curiosity and guided by the patterns that echo across disciplines
+                        </p>
+                        <a href="research.html" class="card-button">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Stuff & Things</h3>
+                        <p class="card-description">
+                            Where side projects, curios, and questionable ideas live (or die)
+                        </p>
+                        <a href="projects.html" class="card-button">View Projects</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Cris Garduño All rights reserved.</p>
-        <div class="footer-content">
-            <a href="https://www.linkedin.com/in/cris-garduno/" target="_blank" rel="noopener noreferrer">
-                <img src="img/LI-In-Bug.png" alt="LinkedIn" class="social-icon">
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="content-container">
+            <p>&copy; 2025 Cris Garduño All rights reserved.</p>
+            <a href="https://linkedin.com/in/cris-garduno" class="social-link" aria-label="LinkedIn Profile">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0H4C1.8 0 0 1.8 0 4v12c0 2.2 1.8 4 4 4h12c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zM6 17H3V8h3v9zM4.5 6.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM17 17h-3v-4.4c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4V17H8V8h2.9v1.2h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.6V17z" fill="currentColor"/>
+                </svg>
             </a>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/navigation.js"></script>
+    <script src="app.js"></script>
 </body>
-</html> 
+</html>
