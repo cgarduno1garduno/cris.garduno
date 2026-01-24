@@ -81,7 +81,7 @@ const PROJECTS_DATA = [
     category: 'project',
     topic: 'Project Management & Organization',
     title: 'SPOT',
-    summary: 'Single Point of Truth - A centralized organizational tool offering essential project management functionality.',
+    summary: 'Simple Project Organiation Tool - A centralized organizational tool offering essential project management functionality.',
     detailsHtml: '<p>SPOT is a minimalist project management tool designed for users who need straightforward task organization without the complexity and overhead of full-featured project management suites. It provides essential project management functionality through a clean, intuitive interface.</p>',
     links: [
       { label: 'Live Demo', href: 'https://cgarduno1garduno.github.io/SPOT/' },
