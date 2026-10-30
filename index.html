@@ -34,8 +34,13 @@ document.addEventListener('DOMContentLoaded', async function() {
   const loading = document.getElementById('__bundler_loading');
   function setStatus(msg) { if (loading) loading.textContent = msg; }
 
-  // Error sink persists across replaceWith since it's on window, not the DOM.
+  // Errors go to the console only. The on-page overlay is opt-in (?debug) so
+  // errors from browser-injected scripts (e.g. Brave's wallet provider, which
+  // reads window.ethereum.selectedAddress) never show up for visitors.
+  var showErrors = /[?&]debug\b/.test(location.search);
   window.addEventListener('error', function(e) {
+    console.warn('[bundle]', e.message || e.type, e.filename || '', e.lineno || '');
+    if (!showErrors) return;
     var p = document.body || document.documentElement;
     var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
     d.id = '__bundler_err';
