@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Mixed methods research scientist at Brooks Running. Perception, wearables, data science, and whatever the question needs.">
+<meta name="description" content="Builder of stuff, breaker of things. I'm a mixed methods researcher at Brooks Running. I start with the question, use whatever methods it takes to answer it, and pick up new skills when I have to.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cris Garduño">
-<meta property="og:description" content="Mixed methods research scientist at Brooks Running. Perception, wearables, data science, and whatever the question needs.">
-<meta property="og:image" content="https://cgarduno1garduno.github.io/cris.garduno/portrait.jpg">
+<meta property="og:description" content="Builder of stuff, breaker of things. I'm a mixed methods researcher at Brooks Running. I start with the question, use whatever methods it takes to answer it, and pick up new skills when I have to.">
 <meta name="twitter:card" content="summary">
 <title>Cris Garduño | Portfolio</title>
 <style>
@@ -23,12 +22,13 @@
   --sep: rgba(60,60,67,.18); --material: rgba(239,236,228,.78);
   --font: -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",system-ui,sans-serif;
   --spring: cubic-bezier(.32,.72,0,1);
+  --net: 184,62,28; --glow: 0,0,0; --glow-a: 0;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --tint:#FF6A45;--bg:#000;--card:#1C1C1E;--fill:rgba(120,120,128,.24);
-  --label:#fff;--label2:rgba(235,235,245,.6);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.6);--material:rgba(29,29,31,.78)}}
+  --label:#fff;--label2:rgba(235,235,245,.6);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.6);--material:rgba(29,29,31,.78);--net:236,120,78;--glow:20,20,22;--glow-a:1}}
 :root[data-theme="dark"]{--tint:#FF6A45;--bg:#000;--card:#1C1C1E;--fill:rgba(120,120,128,.24);
-  --label:#fff;--label2:rgba(235,235,245,.6);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.6);--material:rgba(29,29,31,.78)}
+  --label:#fff;--label2:rgba(235,235,245,.6);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.6);--material:rgba(29,29,31,.78);--net:236,120,78;--glow:20,20,22;--glow-a:1}
 
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -51,7 +51,8 @@ button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:
 .bar #back{padding-right:8px;margin-left:-8px}
 .bar [hidden]{display:none}
 
-main{max-width:760px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left)) 40px}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left)) 40px}
 .view{display:none}.view.on{display:block;animation:fade .3s var(--spring)}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .large{font:700 2.125rem/1.12 var(--font);letter-spacing:.007em;margin:0 0 4px}
@@ -120,6 +121,7 @@ a.cell:active,button.cell:active{background:var(--fill)}
 </head>
 <body>
 
+<canvas id="net" aria-hidden="true"></canvas>
 <header class="bar" id="bar">
   <div class="bar-in">
     <button id="back" aria-label="Back" hidden><svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2 2 10l8 8"/></svg><span style="margin-left:6px">Home</span></button><span id="bar-sp" style="width:44px"></span>
@@ -146,10 +148,10 @@ a.cell:active,button.cell:active{background:var(--fill)}
     </div>
 
     <h2 class="cap">About</h2>
-    <div class="group about"><p>I find the same patterns showing up across very different fields, and I like connecting the dots between them. That is how I ended up as a mixed methods researcher at <em>Brooks Running</em>, where I take on questions without the constraints of any one discipline, and use AI-assisted development to build the tools and models my curiosity demands.</p><p style="margin-top:12px">Outside of work, I enjoy trail running, my pugs, playing guitar, and I recently picked up sailing.</p></div>
+    <div class="group about"><p>I find the same patterns showing up across very different fields, and I like connecting the dots between them. That is how I ended up as a mixed methods researcher at <em>Brooks Running</em>, where I take on questions without the constraints of any one discipline and build the tools and models my curiosity demands.</p><p style="margin-top:12px">Outside of work, I enjoy trail running, my pug Juan Pablo, playing guitar, and recently picked up sailing.</p></div>
 
     <h2 class="cap">Profiles</h2>
-    <div class="group"><a class="cell" href="https://scholar.google.com/citations?user=NcKUFfwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><span class="body"><span class="t tint">Google Scholar</span></span><svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5 7 7l-5.5 5.5"/></svg></a><a class="cell" href="https://www.linkedin.com/in/cris-garduno/" target="_blank" rel="noopener noreferrer"><span class="body"><span class="t tint">LinkedIn</span></span><svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5 7 7l-5.5 5.5"/></svg></a></div>
+    <div class="group"><a class="cell" href="Garduno_Resume.pdf" target="_blank" rel="noopener noreferrer"><span class="body"><span class="t tint">Résumé (PDF)</span></span><svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5 7 7l-5.5 5.5"/></svg></a><a class="cell" href="https://scholar.google.com/citations?user=NcKUFfwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><span class="body"><span class="t tint">Google Scholar</span></span><svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5 7 7l-5.5 5.5"/></svg></a><a class="cell" href="https://www.linkedin.com/in/cris-garduno/" target="_blank" rel="noopener noreferrer"><span class="body"><span class="t tint">LinkedIn</span></span><svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5 7 7l-5.5 5.5"/></svg></a></div>
     <p class="foot" style="text-align:center;margin-top:32px">© <span id="yr"></span> Cris Garduño</p>
   </section>
 
@@ -171,6 +173,64 @@ a.cell:active,button.cell:active{background:var(--fill)}
   </div>
 </div>
 
+
+<script>
+// Background network: a hidden lattice of nodes that is only revealed near the cursor.
+(function(){
+  var cv=document.getElementById('net'),ctx=cv.getContext('2d');
+  var W,H,dpr,nodes=[],GAP=64,R=190,mx=-999,my=-999,cx=-999,cy=-999,level=0,lastMove=0,raf=0,cs;
+  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function build(){
+    dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
+    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);nodes=[];
+    for(var y=-GAP;y<H+GAP;y+=GAP)for(var x=-GAP;x<W+GAP;x+=GAP){
+      var px=x+(Math.random()-.5)*GAP*.7,py=y+(Math.random()-.5)*GAP*.7;
+      nodes.push({x:px,y:py,ox:px,oy:py,p:Math.random()*6.28});
+    }
+  }
+  function wake(x,y){
+    mx=x;my=y;lastMove=performance.now();
+    if(cx<-900){cx=x;cy=y}
+    if(!raf)raf=requestAnimationFrame(frame);
+  }
+  addEventListener('pointermove',function(e){wake(e.clientX,e.clientY)},{passive:true});
+  addEventListener('pointerdown',function(e){wake(e.clientX,e.clientY)},{passive:true});
+  addEventListener('resize',build);
+  document.addEventListener('mouseleave',function(){lastMove=0});
+  function rgb(){cs=getComputedStyle(document.documentElement);return{n:cs.getPropertyValue('--net').trim(),g:cs.getPropertyValue('--glow').trim(),ga:parseFloat(cs.getPropertyValue('--glow-a'))||0}}
+  function frame(t){
+    raf=0;var c=rgb();
+    var idle=t-lastMove>1400;
+    level+=((idle?0:1)-level)*(idle?.05:.18);
+    cx+=(mx-cx)*.22;cy+=(my-cy)*.22;
+    ctx.clearRect(0,0,W,H);
+    if(level>.01){
+      if(c.ga){var g=ctx.createRadialGradient(cx,cy,0,cx,cy,R*1.5);
+        g.addColorStop(0,'rgba('+c.g+','+(.95*level)+')');g.addColorStop(.6,'rgba('+c.g+','+(.55*level)+')');g.addColorStop(1,'rgba('+c.g+',0)');
+        ctx.fillStyle=g;ctx.fillRect(0,0,W,H)}
+      var vis=[];
+      for(var i=0;i<nodes.length;i++){var n=nodes[i];
+        if(!still){n.x=n.ox+Math.sin(t/1800+n.p)*5;n.y=n.oy+Math.cos(t/2100+n.p)*5}
+        var dx=n.x-cx,dy=n.y-cy,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<R){var f=1-d/R;n.a=f*f*level;n.dx=n.x+(-dx)*f*.08;n.dy=n.y+(-dy)*f*.08;vis.push(n)}
+      }
+      ctx.lineWidth=1;
+      for(var a=0;a<vis.length;a++)for(var b=a+1;b<vis.length;b++){
+        var p=vis[a],q=vis[b],ex=p.dx-q.dx,ey=p.dy-q.dy,ed=ex*ex+ey*ey;
+        if(ed<GAP*GAP*1.9){var al=Math.min(p.a,q.a)*.55;ctx.strokeStyle='rgba('+c.n+','+al+')';ctx.beginPath();ctx.moveTo(p.dx,p.dy);ctx.lineTo(q.dx,q.dy);ctx.stroke()}
+      }
+      // cursor node and its live connections to the nearest nodes
+      vis.sort(function(u,v){return Math.hypot(u.dx-cx,u.dy-cy)-Math.hypot(v.dx-cx,v.dy-cy)});
+      for(var k=0;k<Math.min(4,vis.length);k++){var m=vis[k];
+        ctx.strokeStyle='rgba('+c.n+','+(.6*level*m.a/Math.max(m.a,.001)*(1-k*.15))+')';ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(m.dx,m.dy);ctx.stroke()}
+      for(var j=0;j<vis.length;j++){var s=vis[j];ctx.fillStyle='rgba('+c.n+','+Math.min(1,s.a*1.6)+')';ctx.beginPath();ctx.arc(s.dx,s.dy,2.2,0,6.283);ctx.fill()}
+      ctx.fillStyle='rgba('+c.n+','+level+')';ctx.beginPath();ctx.arc(cx,cy,3.6,0,6.283);ctx.fill();
+      raf=requestAnimationFrame(frame);
+    }else if(!idle){raf=requestAnimationFrame(frame)}
+  }
+  build();
+})();
+</script>
 <script>
 // Content, preserved from the original site
 window.RESEARCH_DATA = [
